@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-03-29T21:09:19.794Z"
+last_updated: "2026-03-29T21:15:10.968Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
   percent: 20
 ---
 
@@ -25,7 +25,7 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 ## Current Position
 
 Phase: 02 (lesson-flow) — EXECUTING
-Plan: 6 of 8
+Plan: 7 of 8
 Status: Ready to execute
 Last activity: 2026-03-29
 
@@ -49,6 +49,7 @@ Progress: [██░░░░░░░░] 20%
 | Phase 02-05 P05 | 10 | 2 tasks | 4 files |
 | Phase 02-lesson-flow P06 | 165 | 2 tasks | 6 files |
 | Phase 02-07 P07 | 3 | 1 tasks | 4 files |
+| Phase 02-08 P08 | 10 | 1 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,8 @@ Progress: [██░░░░░░░░] 20%
 - [Phase 02-06]: 10s timeout enforced on main thread; worker.terminate() + recreate on timeout for subsequent runs
 - [Phase 02-07]: aggregateTestResults extracted to testRunnerUtils.ts so test result logic is unit testable independently of Pyodide/Monaco
 - [Phase 02-07]: EditorView uses aggregateTestResults instead of inline every() for consistency with pure utility pattern
+- [Phase 02-08]: MapPage now derives nodeState from TopicWithProgressDTO.nodeState (server-authoritative) instead of computing from user.currentTopicId
+- [Phase 02-08]: 'in-progress' added to NodeState union; mapped to 'available' visually in MapPage; TopicNode handles all 5 states
 
 ### Key Facts for Phase 2
 

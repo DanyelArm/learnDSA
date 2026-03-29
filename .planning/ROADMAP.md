@@ -7,7 +7,7 @@ DSA Quest is built in 5 phases, moving from foundation to content. Phase 1 (comp
 ## Phases
 
 - [x] **Phase 1: Foundation** - Monorepo, auth, adventure map shell, seeded DB
-- [ ] **Phase 2: Lesson Flow** - Theory/quiz/code editor/test runner/linear unlock
+- [x] **Phase 2: Lesson Flow** - Theory/quiz/code editor/test runner/linear unlock (completed 2026-03-29)
 - [ ] **Phase 3: Gamification** - XP, levels, achievements, hints, animations
 - [ ] **Phase 4: Sandbox** - Free-play editor, DSAVisualizer, step-through, presets
 - [ ] **Phase 5: Content & Polish** - All 20 topic lessons/quizzes/exercises, landing page
@@ -46,7 +46,7 @@ Plans:
 - [x] 02-05-PLAN.md — Quiz component (scoring, retry, 80% gate, per-question feedback) + quiz unit tests
 - [x] 02-06-PLAN.md — Monaco editor + Pyodide Web Worker (persistent singleton, 10s timeout) + TestResultTable
 - [x] 02-07-PLAN.md — Practice + Challenge routes wired to EditorView + testRunner unit tests
-- [ ] 02-08-PLAN.md — Linear unlock (map reads nodeState from API) + human verification checkpoint
+- [x] 02-08-PLAN.md — Linear unlock (map reads nodeState from API) + human verification checkpoint
 
 ### Phase 3: Gamification
 **Goal**: XP and level system is live, achievements unlock at milestones, hints cost mini-challenges, animations play on level-up and badge unlock

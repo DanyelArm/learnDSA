@@ -25,7 +25,7 @@
 - [x] **LESS-06**: User can submit challenge solution and see pass/fail against test cases
 - [x] **LESS-07**: Completing a topic's stages unlocks the next topic (linear unlock)
 - [x] **LESS-08**: Topic stages must be completed in order: theory → quiz → practice → challenge
-- [ ] **LESS-09**: Map nodes reflect completion state (locked/available/complete)
+- [x] **LESS-09**: Map nodes reflect completion state (locked/available/complete)
 
 ### Gamification (Phase 3)
 
@@ -94,7 +94,7 @@
 | LESS-06 | Phase 2 | Complete |
 | LESS-07 | Phase 2 | Complete |
 | LESS-08 | Phase 2 | Complete |
-| LESS-09 | Phase 2 | Pending |
+| LESS-09 | Phase 2 | Complete |
 | GAME-01 | Phase 3 | Pending |
 | GAME-02 | Phase 3 | Pending |
 | GAME-03 | Phase 3 | Pending |
