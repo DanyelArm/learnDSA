@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What is the time complexity of accessing an element in an array by index?",
+    "options": ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+    "correctAnswer": 0,
+    "explanation": "Array index access is constant time — the CPU computes the memory address directly with no iteration, regardless of array size."
+  },
+  {
+    "question": "What is the time complexity of linear search on an unsorted list of n elements?",
+    "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+    "correctAnswer": 2,
+    "explanation": "Linear search must examine each element one by one in the worst case (when the target is last or not present), making it O(n) — proportional to the number of elements."
+  },
+  {
+    "question": "An algorithm has two nested loops, each iterating over an input array of size n. What is its time complexity?",
+    "options": ["O(n)", "O(n log n)", "O(n²)", "O(2n)"],
+    "correctAnswer": 2,
+    "explanation": "Two nested loops each running n times perform n × n = n² operations in the worst case, giving O(n²) quadratic complexity."
+  },
+  {
+    "question": "Binary search on a sorted array of n elements has what time complexity?",
+    "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
+    "correctAnswer": 1,
+    "explanation": "Binary search halves the search space with each comparison. Starting from n elements, it takes at most log₂(n) steps to find the target or confirm it is absent."
+  },
+  {
+    "question": "When we say an algorithm is O(n) in the 'worst case', what does that mean?",
+    "options": [
+      "The algorithm always runs in exactly n steps",
+      "The algorithm runs in n steps only when the input is sorted",
+      "In the most unfavorable input scenario, the number of operations grows proportionally to n",
+      "The algorithm uses n bytes of memory"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Worst-case Big-O describes the upper bound on growth for the most unfavorable input. It tells us the algorithm will never perform worse than proportional to n, but may perform better on typical or best-case inputs."
+  }
+]

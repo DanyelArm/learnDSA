@@ -1,0 +1,41 @@
+{
+  "practice": {
+    "stage": "practice",
+    "title": "Count Even Numbers",
+    "description": "Write a function `count_evens(nums)` that returns the count of even numbers in a list. What is the time complexity?\n\n**Constraints:** `0 <= len(nums) <= 1000`, each number is an integer.",
+    "functionName": "count_evens",
+    "starterCode": "def count_evens(nums):\n    # Your code here\n    pass\n",
+    "testCases": [
+      { "input": [[2, 4, 6, 8]], "expected": 4 },
+      { "input": [[1, 3, 5]], "expected": 0 },
+      { "input": [[]], "expected": 0 },
+      { "input": [[1, 2, 3, 4, 5]], "expected": 2 }
+    ],
+    "hints": [
+      "Think about iterating through the list once — what is the Big-O of a single loop?",
+      "Use a counter variable. Increment it whenever `num % 2 == 0`.",
+      "def count_evens(nums):\n    count = 0\n    for num in nums:\n        if num % 2 == 0:\n            count += 1\n    return count"
+    ],
+    "timeBonusThreshold": 120
+  },
+  "challenge": {
+    "stage": "challenge",
+    "title": "Find the Duplicate",
+    "description": "Write a function `find_duplicate(nums)` that, given a list of integers where every element appears exactly once except one element which appears twice, returns the duplicate. Solve it in O(n) time.\n\n**Constraints:** `2 <= len(nums) <= 10^4`, all values are positive integers.",
+    "functionName": "find_duplicate",
+    "starterCode": "def find_duplicate(nums):\n    # Your code here\n    pass\n",
+    "testCases": [
+      { "input": [[1, 3, 4, 2, 2]], "expected": 2 },
+      { "input": [[3, 1, 3, 4, 2]], "expected": 3 },
+      { "input": [[1, 1]], "expected": 1 },
+      { "input": [[2, 2, 1]], "expected": 2 },
+      { "input": [[1, 5, 3, 4, 5, 2]], "expected": 5 }
+    ],
+    "hints": [
+      "A naive O(n²) nested loop works but won't satisfy the constraint. Think about a data structure that gives O(1) lookup.",
+      "Use a set. Add each number; if it's already in the set, you've found the duplicate.",
+      "def find_duplicate(nums):\n    seen = set()\n    for n in nums:\n        if n in seen:\n            return n\n        seen.add(n)\n    return -1"
+    ],
+    "timeBonusThreshold": 180
+  }
+}
