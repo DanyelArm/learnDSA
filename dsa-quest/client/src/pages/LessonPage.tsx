@@ -1,57 +1,49 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { TOPIC_NODES } from '@/lib/constants'
+import { useParams, useNavigate, Outlet, Navigate } from 'react-router-dom'
 import { Navbar } from '@/components/ui/Navbar'
-import { ParchmentPanel } from '@/components/ui/ParchmentPanel'
+import { useLesson } from '@/hooks/useLesson'
+import { TOPIC_NODES } from '@/lib/constants'
 
 export function LessonPage() {
-  const { order } = useParams<{ order: string }>()
+  const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const topicOrder = Number(order)
-  const node = TOPIC_NODES.find((n) => n.order === topicOrder)
+  const topicId = Number(id)
+  const { isLoading, error } = useLesson(topicId)
+
+  const node = TOPIC_NODES.find((n) => n.order === topicId)
 
   if (!node) {
-    return (
-      <div className="fixed inset-0 parchment-bg flex items-center justify-center">
-        <Navbar />
-        <ParchmentPanel className="text-center px-12 py-8">
-          <p className="font-heading text-2xl text-brown-dark">Topic not found.</p>
-          <button
-            className="mt-4 font-heading text-gold underline"
-            onClick={() => navigate('/')}
-          >
-            ← Back to Map
-          </button>
-        </ParchmentPanel>
-      </div>
-    )
+    return <Navigate to="/" replace />
   }
 
   return (
     <div className="fixed inset-0 parchment-bg overflow-y-auto">
       <Navbar />
-      <div className="max-w-3xl mx-auto pt-24 pb-16 px-6">
-        <button
-          className="mb-6 font-heading text-sm text-brown hover:text-gold transition-colors"
-          onClick={() => navigate('/')}
-        >
-          ← Back to Map
-        </button>
+      <div className="max-w-6xl mx-auto pt-20 pb-16 px-6">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-3 mb-6">
+          <button
+            className="font-heading text-sm text-brown hover:text-gold transition-colors"
+            onClick={() => navigate('/')}
+          >
+            Back to Map
+          </button>
+          <span className="text-brown/30">|</span>
+          <span className="font-heading text-sm text-brown-dark">{node.label}</span>
+        </div>
 
-        <ParchmentPanel className="px-8 py-10">
-          <div className="flex items-center gap-3 mb-2">
-            <span
-              className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-              style={{ background: '#D4A32E', color: '#3D2510' }}
-            >
-              {node.order}
-            </span>
-            <h1 className="font-heading text-3xl text-brown-dark">{node.label}</h1>
+        {isLoading && (
+          <div className="flex items-center justify-center h-64">
+            <span className="font-heading text-brown animate-pulse">Preparing your quest...</span>
           </div>
+        )}
 
-          <div className="mt-8 text-center text-brown/60 font-body italic text-sm">
-            Lesson content coming soon — Phase 2 in progress.
+        {error && (
+          <div className="text-center py-12">
+            <p className="font-body text-crimson">{error}</p>
           </div>
-        </ParchmentPanel>
+        )}
+
+        {!isLoading && !error && <Outlet />}
       </div>
     </div>
   )

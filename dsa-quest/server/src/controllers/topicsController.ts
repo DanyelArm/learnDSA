@@ -69,12 +69,15 @@ export async function getProgress(req: Request, res: Response, next: NextFunctio
     const topicId = Number(req.params.id)
     if (isNaN(topicId)) throw new AppError(400, 'Invalid topic id')
 
-    // Also return quiz questions and exercise starters for this topic
-    const [progress, questions, exercises] = await Promise.all([
+    // Also return topic info + quiz questions + exercise starters for this topic
+    const [topic, progress, questions, exercises] = await Promise.all([
+      prisma.topic.findUnique({ where: { id: topicId }, select: { title: true, theoryContent: true, order: true } }),
       prisma.userProgress.findUnique({ where: { userId_topicId: { userId, topicId } } }),
       prisma.quizQuestion.findMany({ where: { topicId } }),
       prisma.exercise.findMany({ where: { topicId } }),
     ])
+
+    if (!topic) throw new AppError(404, 'Topic not found')
 
     const questionsDTO = questions.map((q) => ({
       ...q,
@@ -87,7 +90,7 @@ export async function getProgress(req: Request, res: Response, next: NextFunctio
       hints: JSON.parse(e.hints) as string[],
     }))
 
-    res.json({ data: { progress: progress ?? null, questions: questionsDTO, exercises: exercisesDTO } })
+    res.json({ data: { topic, progress: progress ?? null, questions: questionsDTO, exercises: exercisesDTO } })
   } catch (err) {
     next(err)
   }
