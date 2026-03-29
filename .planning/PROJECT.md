@@ -18,13 +18,15 @@ A motivated learner can go from zero DSA knowledge to confident problem-solver b
 - ✓ User and Topic database models with Prisma/SQLite — Phase 1
 - ✓ Seed script populating all 20 DSA topics — Phase 1
 
-### Active
+### Validated
 
-- [ ] Theory/markdown view per topic
-- [ ] Quiz component (≥80% to pass, unlimited retries)
-- [ ] Monaco + Pyodide in-browser Python code editor
-- [ ] Practice and challenge screens with test case validation
-- [ ] Linear unlock logic (completing topic N unlocks topic N+1)
+- ✓ Theory/markdown view per topic — Phase 2
+- ✓ Quiz component (≥80% to pass, unlimited retries) — Phase 2
+- ✓ Monaco + Pyodide in-browser Python code editor — Phase 2
+- ✓ Practice and challenge screens with test case validation — Phase 2
+- ✓ Linear unlock logic (completing topic N unlocks topic N+1) — Phase 2
+
+### Active
 - [ ] XP/level system with gamification rewards
 - [ ] Achievement system with badge unlocks
 - [ ] Hint system gated behind mini-challenges
@@ -86,4 +88,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after initialization*
+*Last updated: 2026-03-29 — Phase 2 complete: full lesson flow built and verified*
