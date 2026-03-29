@@ -36,15 +36,17 @@ DSA Quest is built in 5 phases, moving from foundation to content. Phase 1 (comp
   3. Monaco editor renders with Python syntax highlighting; Pyodide executes code in a Web Worker
   4. Practice/challenge test runner shows per-test pass/fail output
   5. Completing challenge unlocks next map node; map updates visually
-**Plans**: TBD
+**Plans**: 8 plans
 
 Plans:
-- [ ] 02-01: Progress model migration + DB schema for per-stage tracking
-- [ ] 02-02: Lesson shell, routing, and theory/markdown view
-- [ ] 02-03: Quiz component with scoring and retry logic
-- [ ] 02-04: Monaco editor + Pyodide Web Worker integration
-- [ ] 02-05: Practice and challenge screens with test runner
-- [ ] 02-06: Linear unlock logic and map node state updates
+- [ ] 02-01-PLAN.md — Wave 0: Vitest infrastructure (client + server configs, 5 stub test files)
+- [ ] 02-02-PLAN.md — Prisma schema migration (UserProgress, QuizQuestion, Exercise) + shared types + Big-O sample content
+- [ ] 02-03-PLAN.md — Progress API endpoints (GET progress, POST quiz, POST exercise/:stage) + server unit tests
+- [ ] 02-04-PLAN.md — Lesson shell (nested routing, LessonPage, Outlet) + lessonStore + TheoryView + StageProgressBar
+- [ ] 02-05-PLAN.md — Quiz component (scoring, retry, 80% gate, per-question feedback) + quiz unit tests
+- [ ] 02-06-PLAN.md — Monaco editor + Pyodide Web Worker (persistent singleton, 10s timeout) + TestResultTable
+- [ ] 02-07-PLAN.md — Practice + Challenge routes wired to EditorView + testRunner unit tests
+- [ ] 02-08-PLAN.md — Linear unlock (map reads nodeState from API) + human verification checkpoint
 
 ### Phase 3: Gamification
 **Goal**: XP and level system is live, achievements unlock at milestones, hints cost mini-challenges, animations play on level-up and badge unlock
@@ -105,4 +107,4 @@ Plans:
 
 ---
 *Roadmap initialized: 2026-03-29*
-*Last updated: 2026-03-29 after project initialization*
+*Last updated: 2026-03-29 — Phase 2 planned (8 plans)*
