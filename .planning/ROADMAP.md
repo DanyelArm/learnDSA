@@ -39,8 +39,8 @@ DSA Quest is built in 5 phases, moving from foundation to content. Phase 1 (comp
 **Plans**: 8 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Wave 0: Vitest infrastructure (client + server configs, 5 stub test files)
-- [ ] 02-02-PLAN.md — Prisma schema migration (UserProgress, QuizQuestion, Exercise) + shared types + Big-O sample content
+- [x] 02-01-PLAN.md — Wave 0: Vitest infrastructure (client + server configs, 5 stub test files)
+- [x] 02-02-PLAN.md — Prisma schema migration (UserProgress, QuizQuestion, Exercise) + shared types + Big-O sample content
 - [ ] 02-03-PLAN.md — Progress API endpoints (GET progress, POST quiz, POST exercise/:stage) + server unit tests
 - [ ] 02-04-PLAN.md — Lesson shell (nested routing, LessonPage, Outlet) + lessonStore + TheoryView + StageProgressBar
 - [ ] 02-05-PLAN.md — Quiz component (scoring, retry, 80% gate, per-question feedback) + quiz unit tests

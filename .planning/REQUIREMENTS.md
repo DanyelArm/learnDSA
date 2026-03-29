@@ -18,13 +18,13 @@
 ### Lesson Flow (Phase 2)
 
 - [ ] **LESS-01**: User can view theory content (markdown) for a topic
-- [ ] **LESS-02**: User can take a quiz (≥80% to pass, unlimited retries)
+- [x] **LESS-02**: User can take a quiz (≥80% to pass, unlimited retries)
 - [ ] **LESS-03**: User can write Python code in a Monaco editor in-browser
-- [ ] **LESS-04**: Python code runs via Pyodide in a Web Worker (10-second timeout)
-- [ ] **LESS-05**: User can submit practice exercise and see pass/fail against test cases
-- [ ] **LESS-06**: User can submit challenge solution and see pass/fail against test cases
-- [ ] **LESS-07**: Completing a topic's stages unlocks the next topic (linear unlock)
-- [ ] **LESS-08**: Topic stages must be completed in order: theory → quiz → practice → challenge
+- [x] **LESS-04**: Python code runs via Pyodide in a Web Worker (10-second timeout)
+- [x] **LESS-05**: User can submit practice exercise and see pass/fail against test cases
+- [x] **LESS-06**: User can submit challenge solution and see pass/fail against test cases
+- [x] **LESS-07**: Completing a topic's stages unlocks the next topic (linear unlock)
+- [x] **LESS-08**: Topic stages must be completed in order: theory → quiz → practice → challenge
 - [ ] **LESS-09**: Map nodes reflect completion state (locked/available/complete)
 
 ### Gamification (Phase 3)
@@ -87,13 +87,13 @@
 |-------------|-------|--------|
 | FOUND-01 through FOUND-07 | Phase 1 | Complete |
 | LESS-01 | Phase 2 | Pending |
-| LESS-02 | Phase 2 | Pending |
+| LESS-02 | Phase 2 | Complete |
 | LESS-03 | Phase 2 | Pending |
-| LESS-04 | Phase 2 | Pending |
-| LESS-05 | Phase 2 | Pending |
-| LESS-06 | Phase 2 | Pending |
-| LESS-07 | Phase 2 | Pending |
-| LESS-08 | Phase 2 | Pending |
+| LESS-04 | Phase 2 | Complete |
+| LESS-05 | Phase 2 | Complete |
+| LESS-06 | Phase 2 | Complete |
+| LESS-07 | Phase 2 | Complete |
+| LESS-08 | Phase 2 | Complete |
 | LESS-09 | Phase 2 | Pending |
 | GAME-01 | Phase 3 | Pending |
 | GAME-02 | Phase 3 | Pending |
