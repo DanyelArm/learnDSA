@@ -201,6 +201,13 @@ const STATE_CONFIG: Record<NodeState, {
     textColor: 'text-parchment-light',
     badge: '⚡',
   },
+  'in-progress': {
+    outerBg: 'bg-gold/20',
+    innerBg: 'bg-brown',
+    border: 'border-gold',
+    textColor: 'text-parchment-light',
+    badge: '⚡',
+  },
   completed: {
     outerBg: 'bg-brown/20',
     innerBg: 'bg-brown-dark',
@@ -227,7 +234,7 @@ export function TopicNode({ node, state, onSelect }: TopicNodeProps) {
   const [hovered, setHovered] = useState(false)
   const cfg = STATE_CONFIG[state]
   const isLocked = state === 'locked'
-  const isAvailable = state === 'available'
+  const isAvailable = state === 'available' || state === 'in-progress'
   const isMastered = state === 'mastered'
 
   // The node div is absolute within the world canvas

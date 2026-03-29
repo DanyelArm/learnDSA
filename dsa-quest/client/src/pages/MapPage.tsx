@@ -3,40 +3,22 @@ import { useNavigate } from 'react-router-dom'
 import { AdventureMap } from '@/components/map/AdventureMap'
 import { Navbar } from '@/components/ui/Navbar'
 import { useTopics } from '@/hooks/useTopics'
-import { useAuth } from '@/hooks/useAuth'
 import type { NodeState } from '@dsa-quest/shared'
 
 export function MapPage() {
   const { topics, isLoading } = useTopics()
-  const { user } = useAuth()
   const navigate = useNavigate()
 
-  // Determine state of each topic node based on user's currentTopicId
+  // Derive node states from server-side nodeState field on each TopicWithProgressDTO
   const nodeStates = useMemo(() => {
-    const states = new Map<number, NodeState>()
-
-    if (topics.length === 0) {
-      return states
+    const map = new Map<number, NodeState>()
+    for (const topic of topics) {
+      // Map 'in-progress' to 'available' visually — TopicNode handles glowing/clickable for both
+      const state = topic.nodeState === 'in-progress' ? 'available' : (topic.nodeState as NodeState)
+      map.set(topic.order, state ?? 'locked')
     }
-
-    // currentTopicId = null → user hasn't started, topic 1 is available
-    // currentTopicId = N → topics 1..N-1 are completed, N is available, N+1.. are locked
-    const currentOrder = user?.currentTopicId
-      ? topics.find((t) => t.id === user.currentTopicId)?.order ?? 1
-      : 1
-
-    topics.forEach((topic) => {
-      if (topic.order < currentOrder) {
-        states.set(topic.order, 'completed')
-      } else if (topic.order === currentOrder) {
-        states.set(topic.order, 'available')
-      } else {
-        states.set(topic.order, 'locked')
-      }
-    })
-
-    return states
-  }, [topics, user])
+    return map
+  }, [topics])
 
   function handleNodeSelect(order: number) {
     navigate(`/topic/${order}`)

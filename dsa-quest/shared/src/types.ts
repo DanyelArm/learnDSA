@@ -28,7 +28,7 @@ export interface ApiError {
 
 export type TopicStage = 'theory' | 'practice' | 'challenge'
 
-export type NodeState = 'locked' | 'available' | 'completed' | 'mastered'
+export type NodeState = 'locked' | 'available' | 'in-progress' | 'completed' | 'mastered'
 
 export interface TestCase {
   input: unknown[]   // array of arguments to pass to the function
