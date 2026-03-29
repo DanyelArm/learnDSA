@@ -7,6 +7,7 @@ interface TopicsState {
   isLoading: boolean
   error: string | null
   fetchTopics: () => Promise<void>
+  invalidate: () => void
 }
 
 export const useTopicsStore = create<TopicsState>()((set, get) => ({
@@ -24,4 +25,6 @@ export const useTopicsStore = create<TopicsState>()((set, get) => ({
       set({ error: 'Failed to load topics', isLoading: false })
     }
   },
+
+  invalidate: () => set({ topics: [] }), // clears cache so next fetchTopics re-fetches
 }))
