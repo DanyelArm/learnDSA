@@ -17,7 +17,7 @@
 
 ### Lesson Flow (Phase 2)
 
-- [ ] **LESS-01**: User can view theory content (markdown) for a topic
+- [x] **LESS-01**: User can view theory content (markdown) for a topic
 - [x] **LESS-02**: User can take a quiz (≥80% to pass, unlimited retries)
 - [ ] **LESS-03**: User can write Python code in a Monaco editor in-browser
 - [x] **LESS-04**: Python code runs via Pyodide in a Web Worker (10-second timeout)
@@ -86,7 +86,7 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | FOUND-01 through FOUND-07 | Phase 1 | Complete |
-| LESS-01 | Phase 2 | Pending |
+| LESS-01 | Phase 2 | Complete |
 | LESS-02 | Phase 2 | Complete |
 | LESS-03 | Phase 2 | Pending |
 | LESS-04 | Phase 2 | Complete |

@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-03-29T14:13:15.440Z"
+last_updated: "2026-03-29T14:13:21.880Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 5
@@ -56,6 +56,8 @@ Progress: [██░░░░░░░░] 20%
 - Phase 1: JWT stored in localStorage (XSS acknowledged, revisit in hardening phase)
 - Phase 1: Shared `@dsa-quest/shared` package for TypeScript types and XP constants
 - [Phase 02-lesson-flow]: 02-01: Client vitest uses jsdom environment; server vitest uses node environment; stubs use it.todo() so all suites exit 0 before feature code exists
+- [Phase 02]: SQLite has no array type — options/testCases/hints stored as JSON-encoded strings in DB
+- [Phase 02]: Seed uses deleteMany+createMany for idempotency on QuizQuestion and Exercise rows
 
 ### Key Facts for Phase 2
 
