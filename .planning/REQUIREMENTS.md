@@ -19,7 +19,7 @@
 
 - [x] **LESS-01**: User can view theory content (markdown) for a topic
 - [x] **LESS-02**: User can take a quiz (≥80% to pass, unlimited retries)
-- [ ] **LESS-03**: User can write Python code in a Monaco editor in-browser
+- [x] **LESS-03**: User can write Python code in a Monaco editor in-browser
 - [x] **LESS-04**: Python code runs via Pyodide in a Web Worker (10-second timeout)
 - [x] **LESS-05**: User can submit practice exercise and see pass/fail against test cases
 - [x] **LESS-06**: User can submit challenge solution and see pass/fail against test cases
@@ -88,7 +88,7 @@
 | FOUND-01 through FOUND-07 | Phase 1 | Complete |
 | LESS-01 | Phase 2 | Complete |
 | LESS-02 | Phase 2 | Complete |
-| LESS-03 | Phase 2 | Pending |
+| LESS-03 | Phase 2 | Complete |
 | LESS-04 | Phase 2 | Complete |
 | LESS-05 | Phase 2 | Complete |
 | LESS-06 | Phase 2 | Complete |
