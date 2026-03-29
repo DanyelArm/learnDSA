@@ -6,6 +6,7 @@ import { MapPage } from '@/pages/MapPage'
 import { LessonPage } from '@/pages/LessonPage'
 import { TheoryView } from '@/components/lesson/TheoryView'
 import { QuizView } from '@/components/lesson/QuizView'
+import { EditorView } from '@/components/lesson/EditorView'
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
             <Route index element={<Navigate to="theory" replace />} />
             <Route path="theory" element={<TheoryView />} />
             <Route path="quiz" element={<QuizView />} />
-            <Route path="practice" element={<div className="font-heading text-center py-12 text-brown">Practice coming in Plan 07</div>} />
-            <Route path="challenge" element={<div className="font-heading text-center py-12 text-brown">Challenge coming in Plan 07</div>} />
+            <Route path="practice" element={<EditorView stage="practice" />} />
+            <Route path="challenge" element={<EditorView stage="challenge" />} />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

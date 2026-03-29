@@ -6,6 +6,7 @@ import { TestResultTable } from './TestResultTable'
 import { useLessonStore } from '@/stores/lessonStore'
 import { useTopicsStore } from '@/stores/topicsStore'
 import { createPyodideWorker, runPyodideTests } from '@/lib/pyodideWorker'
+import { aggregateTestResults } from '@/lib/testRunnerUtils'
 import { api } from '@/lib/api'
 import type { TestResult, UserProgressDTO } from '@dsa-quest/shared'
 
@@ -113,7 +114,8 @@ export function EditorView({ stage }: Props) {
     }
   }
 
-  const allTestsPassed = results.length > 0 && results.every((r) => r.passed)
+  const runSummary = aggregateTestResults(results)
+  const allTestsPassed = runSummary.allPassed
   const stageLabel = stage === 'practice' ? 'The Forge' : 'The Arena'
   const stageIcon = stage === 'practice' ? '⚒' : '⚔'
 
