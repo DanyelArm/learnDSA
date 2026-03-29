@@ -15,6 +15,7 @@ model User {
   xp             Int      @default(0)
   level          Int      @default(1)
   currentTopicId Int?
+  progress       UserProgress[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -28,6 +29,54 @@ model Topic {
   description       String
   theoryContent     String @default("")
   visualizationType String @default("")
+  progress          UserProgress[]
+  quizQuestions     QuizQuestion[]
+  exercises         Exercise[]
 
   createdAt DateTime @default(now())
+}
+
+model UserProgress {
+  id                 Int      @id @default(autoincrement())
+  userId             Int
+  topicId            Int
+  theoryCompleted    Boolean  @default(false)
+  quizScore          Float?
+  quizPassed         Boolean  @default(false)
+  practiceCompleted  Boolean  @default(false)
+  practiceAttempts   Int      @default(0)
+  challengeCompleted Boolean  @default(false)
+  challengeAttempts  Int      @default(0)
+  hintsUsed          Int      @default(0)
+  xpEarned           Int      @default(0)
+  user               User     @relation(fields: [userId], references: [id])
+  topic              Topic    @relation(fields: [topicId], references: [id])
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@unique([userId, topicId])
+}
+
+model QuizQuestion {
+  id            Int    @id @default(autoincrement())
+  topicId       Int
+  question      String
+  options       String  // JSON-encoded string[] — SQLite has no array type
+  correctAnswer Int     // index into options[]
+  explanation   String
+  topic         Topic  @relation(fields: [topicId], references: [id])
+}
+
+model Exercise {
+  id                 Int    @id @default(autoincrement())
+  topicId            Int
+  stage              String // "practice" | "challenge"
+  title              String
+  description        String
+  starterCode        String
+  testCases          String // JSON-encoded TestCase[] — SQLite has no array type
+  hints              String // JSON-encoded string[3]
+  timeBonusThreshold Int?   // seconds; null = no speed bonus
+  functionName       String // name of function user must implement (for Pyodide test runner)
+  topic              Topic  @relation(fields: [topicId], references: [id])
 }
