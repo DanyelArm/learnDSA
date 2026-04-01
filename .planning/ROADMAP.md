@@ -58,14 +58,14 @@ Plans:
   3. Achievement badges unlock and display for defined milestones
   4. Hint modal prompts mini-challenge before revealing hint token
   5. All 3 hint tiers display in correct order
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 03-01: XP award API endpoints and level-up logic
-- [ ] 03-02: XP bar and level display components
-- [ ] 03-03: Achievement system (definitions, checks, display)
-- [ ] 03-04: Hint system with mini-challenge gate
-- [ ] 03-05: Level-up, badge, and map reveal animations
+- [ ] 03-01-PLAN.md — Schema migration + shared types + XP/achievement server logic with TDD tests
+- [ ] 03-02-PLAN.md — XP bar component + gamificationStore + GamificationOrchestrator + Navbar integration
+- [ ] 03-03-PLAN.md — Hint system: mini-challenge content + HintGate + MiniChallenge components + EditorView wiring
+- [ ] 03-04-PLAN.md — LevelUpModal (scroll unfurl) + BadgeModal (coin flip) animations
+- [ ] 03-05-PLAN.md — Integration test suite + human verification checkpoint
 
 ### Phase 4: Sandbox
 **Goal**: Free-play Monaco+Pyodide editor works, DSAVisualizer renders step-through animations from state snapshots, preset templates load correctly
@@ -107,4 +107,4 @@ Plans:
 
 ---
 *Roadmap initialized: 2026-03-29*
-*Last updated: 2026-03-29 — Phase 2 planned (8 plans)*
+*Last updated: 2026-04-01 — Phase 3 planned (5 plans)*
