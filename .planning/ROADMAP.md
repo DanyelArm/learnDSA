@@ -58,11 +58,12 @@ Plans:
   3. Achievement badges unlock and display for defined milestones
   4. Hint modal prompts mini-challenge before revealing hint token
   5. All 3 hint tiers display in correct order
-**Plans**: 5 plans
+**Plans**: 6 plans
 
 Plans:
+- [ ] 03-00-PLAN.md — Wave 0: Test stubs for all gamification components (7 stub files)
 - [ ] 03-01-PLAN.md — Schema migration + shared types + XP/achievement server logic with TDD tests
-- [ ] 03-02-PLAN.md — XP bar component + gamificationStore + GamificationOrchestrator + Navbar integration
+- [ ] 03-02-PLAN.md — XP bar component + gamificationStore + GamificationOrchestrator + Navbar integration + API response wiring
 - [ ] 03-03-PLAN.md — Hint system: mini-challenge content + HintGate + MiniChallenge components + EditorView wiring
 - [ ] 03-04-PLAN.md — LevelUpModal (scroll unfurl) + BadgeModal (coin flip) animations
 - [ ] 03-05-PLAN.md — Integration test suite + human verification checkpoint
@@ -107,4 +108,4 @@ Plans:
 
 ---
 *Roadmap initialized: 2026-03-29*
-*Last updated: 2026-04-01 — Phase 3 planned (5 plans)*
+*Last updated: 2026-04-01 — Phase 3 revised (6 plans, added Wave 0)*
